@@ -4,10 +4,11 @@
 import { ErrorRequestHandler } from 'express';
 import { ZodError } from 'zod';
 import { TerrorSource } from '../interface/error';
-import handleZodError from '../errors/hanleZodError';
-import handleCastError from '../errors/handleCastError';
-import handleValidationError from '../errors/handleValidationError';
 import appError from '../errors/appError';
+import handleZodError from '../errors/handleZodError';
+import handleValidationError from '../errors/handleValidationError';
+import handleDuplicateError from '../errors/handleDuplicateError';
+import handleCastError from '../errors/handleCastError';
 
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
   let statusCode = err.statusCode || 500;
