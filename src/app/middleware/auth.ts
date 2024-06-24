@@ -8,13 +8,13 @@ import config from '../config';
 
 export const auth = (...requiredRole: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    const token = req.headers.authorization?.split(' ')[1];
+    const token = req.headers.authorization;
 
     if (!token) {
       return res.status(httpStatus.UNAUTHORIZED).json({
         success: false,
         statusCode: 401,
-        message: 'You are not authorized!',
+        message: 'You are not authorized!!',
       });
     }
 
