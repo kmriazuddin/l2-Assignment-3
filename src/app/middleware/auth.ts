@@ -8,7 +8,7 @@ import config from '../config';
 
 export const auth = (...requiredRole: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    const token = req.headers.authorization;
+    const token = req.headers.authorization?.split(' ')[1];
 
     if (!token) {
       return res.status(httpStatus.UNAUTHORIZED).json({
