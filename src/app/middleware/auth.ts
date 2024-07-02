@@ -14,7 +14,7 @@ export const auth = (...requiredRole: TUserRole[]) => {
       return res.status(httpStatus.UNAUTHORIZED).json({
         success: false,
         statusCode: 401,
-        message: 'You are not authorized!!',
+        message: 'You are not authorized!!!',
       });
     }
 
